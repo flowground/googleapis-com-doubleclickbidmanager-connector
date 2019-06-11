@@ -1,0 +1,73 @@
+{
+    "type": "object",
+    "properties": {
+        "queryId": {
+            "required": true,
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request to run a stored query to generate a report.",
+            "properties": {
+                "dataRange": {
+                    "description": "Report data range used to generate the report.",
+                    "enum": [
+                        "ALL_TIME",
+                        "CURRENT_DAY",
+                        "CUSTOM_DATES",
+                        "LAST_14_DAYS",
+                        "LAST_30_DAYS",
+                        "LAST_365_DAYS",
+                        "LAST_7_DAYS",
+                        "LAST_90_DAYS",
+                        "MONTH_TO_DATE",
+                        "PREVIOUS_DAY",
+                        "PREVIOUS_HALF_MONTH",
+                        "PREVIOUS_MONTH",
+                        "PREVIOUS_QUARTER",
+                        "PREVIOUS_WEEK",
+                        "PREVIOUS_YEAR",
+                        "QUARTER_TO_DATE",
+                        "TYPE_NOT_SUPPORTED",
+                        "WEEK_TO_DATE",
+                        "YEAR_TO_DATE"
+                    ],
+                    "type": "string"
+                },
+                "reportDataEndTimeMs": {
+                    "description": "The ending time for the data that is shown in the report. Note, reportDataEndTimeMs is required if dataRange is CUSTOM_DATES and ignored otherwise.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "reportDataStartTimeMs": {
+                    "description": "The starting time for the data that is shown in the report. Note, reportDataStartTimeMs is required if dataRange is CUSTOM_DATES and ignored otherwise.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "timezoneCode": {
+                    "description": "Canonical timezone code for report data time. Defaults to America/New_York.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

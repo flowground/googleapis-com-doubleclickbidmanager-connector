@@ -1,0 +1,68 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request to fetch stored line items.",
+            "properties": {
+                "fileSpec": {
+                    "description": "File specification (column names, types, order) in which the line items will be returned. Default to EWF.",
+                    "enum": [
+                        "EWF"
+                    ],
+                    "type": "string"
+                },
+                "filterIds": {
+                    "description": "Ids of the specified filter type used to filter line items to fetch. If omitted, all the line items will be returned.",
+                    "items": {
+                        "format": "int64",
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "filterType": {
+                    "description": "Filter type used to filter line items to fetch.",
+                    "enum": [
+                        "ADVERTISER_ID",
+                        "INSERTION_ORDER_ID",
+                        "LINE_ITEM_ID"
+                    ],
+                    "type": "string"
+                },
+                "format": {
+                    "description": "Format in which the line items will be returned. Default to CSV.",
+                    "enum": [
+                        "CSV"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

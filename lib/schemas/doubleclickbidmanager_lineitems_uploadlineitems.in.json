@@ -1,0 +1,52 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request to upload line items.",
+            "properties": {
+                "dryRun": {
+                    "description": "Set to true to get upload status without actually persisting the line items.",
+                    "type": "boolean"
+                },
+                "format": {
+                    "description": "Format the line items are in. Default to CSV.",
+                    "enum": [
+                        "CSV"
+                    ],
+                    "type": "string"
+                },
+                "lineItems": {
+                    "description": "Line items in CSV to upload. Refer to  Entity Write File Format for more information on file format.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
